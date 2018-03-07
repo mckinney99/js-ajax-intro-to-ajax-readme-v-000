@@ -18,3 +18,10 @@ function showRepositories(event, data) {
   repoList += "</ul>"
   document.getElementById("repositories").innerHTML = repoList
 }
+
+function showRepositories(event, data) {
+  var repos = JSON.parse(this.responseText)
+  console.log(repos)
+  const repoList = `<ul>${repos.map(r => '<li>' + r.name + '</li>').join('')}</ul>`
+  document.getElementById("repositories").innerHTML = repoList
+}
